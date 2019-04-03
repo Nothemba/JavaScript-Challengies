@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="UTF-8">
+</head>
+<title></title>
+<style> 
+body{
+    
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+.container{
+border-style: solid;
+border-color: black;
+border-radius: 10px;
+background-color:#8237;
+padding-right: 8%;
+padding-left: 8%;
+}
+h1{
+    color: rgb(75, 55, 37);
+}
+button{
+    color: white;
+    background-color:rgb(59, 48, 27);
+    
+
+}
+input{
+    
+    width:250px;
+    margin-right: 30px ;
+    display:flex;
+  justify-content:center;
+   padding: .3em;
+}
+
+</style>
+<body>
+    <div class="container">
+    
+    <!-- Challenge number1 -->
+    <h1>JAVASCRIPT CHALLENGES</h1>
+    <h3>Challenge 1</Challenge></h3>
+    <p>Display current time and date</p><br>
+    <div class="dateAndTime">
+    
+    <button onclick="date_time()" id ="btnDate">Display</button><br>
+<script>
+    function date_time(){
+
+    var date = new Date();
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday" ,"Friday", "Saturday"];
+    document.write("Today is : " + days[date.getDay()] + ".");
+    var period; 
+    var hours = date.getHours();
+    if (date.getHours() >= 12 ){
+        period = "PM";}
+
+        else{
+        period = "AM";
+
+    }
+    if (hours > 12 )
+        hours = hours - 12;
+        document.write("<br/>");
+        document.writel("Current time is: " + [hours + " " + period] + " : " + [date.getMinutes()] +" : "+ [date.getSeconds()]);
+    }
+
+</script>
+
+</div>
+<!--Challenge number 2 -->
+<div class="URL">
+    <h3>Challenge 2 </h3>
+    <p>Get the website url</p><br>
+    
+    <button onclick="urlDisplay()">Get URL</button><br>
+
+    <script>
+        function urlDisplay(){
+    alert(window.location.href);
+        }
+   
+</script>
+</div>
+
+
+<!--<Challenge number 3 -->
+
+<div>
+    <form action="" method ="POST">
+    <h3>Challenge 3 </h3>
+    <p>Check if a string starts with 'Java'</p>
+    <label for="trueFalse"> Please Enter a word </label>
+    <input type="text" id="trueFalse"><br>
+        <button onclick="truestr()"> Click </button><br>
+    </form>
+    
+    <script>
+       
+    function truestr(){
+       testString = document.getElementById("trueFalse").value;
+       let javaRex = /^Java/i; 
+       alert(javaRex.test(testString));
+}
+
+    
+    </script>
+</div>
+
+<div>
+    <!--Challenge 4-->
+<h3>Challenge 4</h3>
+<label for="number1">Enter Number 1</label>
+<input type="text" id ="number1"> </br>
+<label for="number2">Enter Number 2</label>
+<input type="text" id="number2"> </br>
+<label for ="number3">Enter Number 3</label>
+<input type="text" id= "number3"><br>
+<button onclick="largestNumber()">Check It</button>
+
+<script>
+    function largestNumber(num1, num2 , num3){
+       var Number1 = document.getElementById("number1").value;
+       var Number2 = document.getElementById("number2").value;
+       var Number3 = document.getElementById("number3").value;
+        
+if (Number1 > Number2 && Number1 > Number3){
+    alert (number1);
+
+    }
+    else if (Number2 > Number1 && Number2 > Number3){
+    alert(Number2);
+
+
+    } 
+    else {
+    alert(Number3);
+    }
+
+}
+</script>
+</div>
+<!--Challenge number 5-->
+
+<div>
+        <h3> Challenge 5</h3>
+        <p>capitalize the first letter of each word of a given string.</p>
+        <label for="userString">Please Enter a word or sentence to capitalize</label></br>
+        <input type="text" id="userString"></input><br>
+        <button onclick="titleStr()">OK</button>
+    
+    
+        <script>
+    function titleStr() {
+        var myStr = document.getElementById("userString").value;
+        var arr = myStr.toLowerCase().split(' ');
+    
+        for (var i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);  
+        }
+        alert(arr.join(' ')); 
+    }
+    
+        </script>
+    
+    </div>
+    <!--Challenge 6-->
+<div>
+    <h3>Challenge 6 </h3>
+    <p>Covert number to an hour </p>
+    <label for="number">Enter the number you want to convert to hours an minutes </label><br>
+    <input type="text" id ="number"></br>
+    <button onclick="convertNumber()">OK</button>
+    <script>
+       function convertNumber()
+        { 
+        var numToconvert = document.getElementById("number").value;
+        var hours = Math.floor(numToconvert / 60);  
+        var minutes = numToconvert % 60; 
+        alert(hours + ":" + minutes);         
+        }
+
+          
+        
+    </script>
+    
+</div>
+</div>
+</body>
+</body>
+
+</html>
