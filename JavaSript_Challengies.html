@@ -180,7 +180,7 @@ if (Number1 > Number2 && Number1 > Number3){
        function convertNumber()
         { 
         var numToconvert = document.getElementById("number").value;
-        var hours = Math.floor(numToconvert / 60);  
+        var hours = Math.round(numToconvert / 60);  
         var minutes = numToconvert % 60; 
         alert(hours + ":" + minutes);         
         }
